@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "minify" : true,
   "scripts": {
-    "build": "ocamllex src/lexer.mll && menhir -v src/parser.mly  && bsb -make-world",
+    "build": "ocamllex src/lexer.mll && menhir --explain --strict src/parser.mly  && bsb -make-world",
     "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world"
+    "clean": "bsb -clean-world",
+    "bundle": "yarn build && browserify lib/js/src/Demo.bs.js --standalone myBundle  -o output/bundle.js"
   },
   "keywords": [
     "BuckleScript"

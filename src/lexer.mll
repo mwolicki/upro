@@ -25,7 +25,6 @@ rule read =
     (* | int { INT(int_of_string (Lexing.lexeme lexbuf)) } *)
     | id { ID (Lexing.lexeme lexbuf) }
     | string { STRING (Lexing.lexeme lexbuf) }
-    | "?-" { QUESTION }
     | '.' { FULLSTOP }
     | ":-" { RULE }
     | '(' { LEFT_BRACKET }

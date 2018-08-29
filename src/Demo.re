@@ -1,2 +1,15 @@
+let code = "test(X,Y).
+test(aaa,bbb) :- test(aaa,bbb), test(aaa,bbb).
+";
 
-Js.log(Test.text());
+let t = "test(X,Y).
+";
+
+let executeCode = (code) => {
+    Test.text (code);
+};
+
+Js.log(executeCode (code));
+Js.log(executeCode (t));
+
+

@@ -7,10 +7,8 @@ let print_position lexbuf =
     pos.pos_lnum (pos.pos_cnum - pos.pos_bol + 1)
 
 
-let text () = 
-    let lexbuf = Lexing.from_string "test(X,Y).
-    test(aaa,bbb).
-    " in
+let text code = 
+    let lexbuf = Lexing.from_string code in
     lexbuf.lex_curr_p <-
         { lexbuf.lex_curr_p with pos_bol = 0;
                             pos_lnum = 0
