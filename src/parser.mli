@@ -5,6 +5,7 @@ type token =
   | STRING of (string)
   | RULE
   | RIGHT_BRACKET
+  | QUESTION
   | LEFT_BRACKET
   | ID of (string)
   | FULLSTOP
@@ -17,4 +18,4 @@ exception Error
 
 (* The monolithic API. *)
 
-val parse: (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (_)
+val parse: (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (Ast.question)

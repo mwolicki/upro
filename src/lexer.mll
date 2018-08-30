@@ -27,6 +27,7 @@ rule read =
     | string { STRING (Lexing.lexeme lexbuf) }
     | '.' { FULLSTOP }
     | ":-" { RULE }
+    | "?-" { QUESTION }
     | '(' { LEFT_BRACKET }
     | ')' { RIGHT_BRACKET }
     | ',' { COMMA }
